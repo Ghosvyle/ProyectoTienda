@@ -1,0 +1,43 @@
+{% extends "basever.html" %}
+
+{% block title %} Empleado {% endblock %}
+{% block t %} Empleados {% endblock %}
+
+{% block content %}
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>ID_Emp</th>
+          <th>DNI</th>
+          <th>Nombre</th>
+          <th>Apellido Paterno</th>
+          <th>Apellido Materno</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if object_list %}
+        {% for e in object_list %}
+        <tr>
+          <td>{{e.id_emp}}</td>
+          <td>{{e.dni}}</td>
+          <td>{{e.nombre}}</td>
+          <td>{{e.apell_pat}}</td>
+          <td>{{e.apell_mat}}</td>
+          <td>
+            <a class="btn btn-primary" href="{% url 'Empleadoseditar' e.id %}">Editar</a>
+            <a class="btn btn-danger" href="{% url 'Empleadoseliminar' e.id %}">Eliminar</a>
+          </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <h1>
+            No hay registros
+        </h1>
+        {% endif %}
+        <tr>
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

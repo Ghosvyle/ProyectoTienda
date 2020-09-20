@@ -1,0 +1,39 @@
+{% extends "basever.html" %}
+
+{% block title %} Marcas {% endblock %}
+{% block t %} Marcas {% endblock %}
+
+{% block content %}
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Marca</th>
+          <th>Celular</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if object_list %}
+        {% for m in object_list %}
+        <tr>
+          <td>{{m.id_marca}}</td>
+          <td>{{m.nombre}}</td>
+          <td>{{m.celular}}</td>
+          <td>
+            <a class="btn btn-primary" href="{% url 'Marcaseditar' m.id %}">Editar</a>
+            <a class="btn btn-danger" href="{% url 'Marcaseliminar' m.id %}">Eliminar</a>
+          </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <h1>
+            No hay registros
+        </h1>
+        {% endif %}
+        <tr>
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

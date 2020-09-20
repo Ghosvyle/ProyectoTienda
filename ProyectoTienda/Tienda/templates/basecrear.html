@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %} {% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- styles -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700" rel="stylesheet">
+  <link href="/static/css/bootstrap.css" rel="stylesheet">
+  <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/static/css/docs.css" rel="stylesheet">
+  <link href="/static/css/prettyPhoto.css" rel="stylesheet">
+  <link href="/static/js/google-code-prettify/prettify.css" rel="stylesheet">
+  <link href="/static/css/flexslider.css" rel="stylesheet">
+  <link href="/static/css/sequence.css" rel="stylesheet">
+  <link href="/static/css/style.css" rel="stylesheet">
+  <link href="/static/color/default.css" rel="stylesheet">
+
+  <!-- fav and touch icons -->
+  <link rel="shortcut icon" href="/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="/static/ico/apple-touch-icon-57-precomposed.png">
+
+  <!-- =======================================================
+    Theme Name: Serenity
+    Theme URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  <header>
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <!-- logo -->
+          <a class="brand logo" href="home"><img src="/static/img/lucky.jpg" alt=""></a>
+          <!-- end logo -->
+          <!-- top menu -->
+          <div class="navigation">
+            <nav>
+              <ul class="nav topnav">
+                <li class="dropdown">
+                  <a href="home">Home</a>
+                </li>
+                <li class="dropdown">
+                  <a href="#">Ver</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="empleados">Empleados</a></li>
+                    <li><a href="clientes">Clientes</a></li>
+                    <li><a href="productos">Productos</a></li>
+                    <li><a href="marcas">Marcas</a></li>
+                    <li><a href="pedidos">Pedidos</a></li>
+                    <li><a href="comprobantes">Comprobantes</a></li>
+                    <li><a href="prodped">Producto-Pedido</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown active">
+                  <a href="#">Crear</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="nuevo_empleado">Empleados</a></li>
+                    <li><a href="nuevo_cliente">Clientes</a></li>
+                    <li><a href="nuevo_producto">Productos</a></li>
+                    <li><a href="nueva_marca">Marcas</a></li>
+                    <li><a href="nuevo_pedido">Pedidos</a></li>
+                    <li><a href="nuevo_comprobante">Comprobantes</a></li>
+                    <li><a href="nuevo_prodped">Producto-Pedido</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="logout">Logout</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- end menu -->
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="subintro">
+    <div class="jumbotron subhead" id="overview">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <div class="centered">
+              <h3>{% block t %} {% endblock %}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="maincontent">
+    <div class="container">
+      {% block content %}
+
+      {% endblock %}
+      <h1>Accesos Rápidos</h1>
+      <div class="row">
+        <div class="span3 features">
+          <h4>Productos</h4>
+          <div class="dotted_line">
+          </div>
+          <p class="left">
+            Muestra en lista los diferentes prendas que tiene la tienda, ya sea que este en stock o no.
+          </p>
+          <a href="productos">Ver productos</a>
+        </div>
+        <div class="span3 features">
+          <h4>Marcas</h4>
+          <div class="dotted_line">
+          </div>
+          <p class="left">
+            Dispone las diferentes marcas de las prendas que ofrecemos.
+          </p>
+          <a href="marcas">Ver Marcas</a>
+        </div>
+        <div class="span3 features">
+          <h4>Clientes</h4>
+          <div class="dotted_line">
+          </div>
+          <p class="left">
+            Información sobre los diferentes clientes que han comprado en nuestra tienda.
+          </p>
+          <a href="clientes">Ver Clientes</a>
+        </div>
+        <div class="span3 features">
+          <h4>Empleados</h4>
+          <div class="dotted_line">
+          </div>
+          <p class="left">
+            Información sobre los empleados que Lucky Charm tiene asu disposición.
+          </p>
+          <a href="empleados">Ver Empleados</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript Library Files -->
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/jquery.easing.js"></script>
+  <script src="/static/js/google-code-prettify/prettify.js"></script>
+  <script src="/static/js/modernizr.js"></script>
+  <script src="/static/js/bootstrap.js"></script>
+  <script src="/static/js/jquery.elastislide.js"></script>
+  <script src="/static/js/sequence/sequence.jquery-min.js"></script>
+  <script src="/static/js/sequence/setting.js"></script>
+  <script src="/static/js/jquery.prettyPhoto.js"></script>
+  <script src="/static/js/application.js"></script>
+  <script src="/static/js/jquery.flexslider.js"></script>
+  <script src="/static/js/hover/jquery-hover-effect.js"></script>
+  <script src="/static/js/hover/setting.js"></script>
+
+  <!-- Template Custom JavaScript File -->
+  <script src="/static/js/custom.js"></script>
+
+</body>
+</html>

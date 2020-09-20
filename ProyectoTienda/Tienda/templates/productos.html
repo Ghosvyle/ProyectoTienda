@@ -1,0 +1,47 @@
+{% extends "basever.html" %}
+
+{% block title %} Productos {% endblock %}
+{% block t %} Productos {% endblock %}
+
+{% block content %}
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>ID_Producto</th>
+          <th>ID_Marca</th>
+          <th>Tipo</th>
+          <th>Talla</th>
+          <th>Precio</th>
+          <th>Estado</th>
+          <th>Stock</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if object_list %}
+        {% for pro in object_list %}
+        <tr>
+          <td>{{pro.id_producto}}</td>
+          <td>{{pro.id_marca.id_marca}}</td>
+          <td>{{pro.tipo}}</td>
+          <td>{{pro.talla}}</td>
+          <td>{{pro.precio}}</td>
+          <td>{{pro.estado}}</td>
+          <td>{{pro.stock}}</td>
+          <td>
+            <a class="btn btn-primary" href="{% url 'Productoseditar' pro.id %}">Editar</a>
+            <a class="btn btn-danger" href="{% url 'Productoseliminar' pro.id %}">Eliminar</a>
+          </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <h1>
+            No hay registros
+        </h1>
+        {% endif %}
+        <tr>
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

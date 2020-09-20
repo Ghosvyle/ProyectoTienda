@@ -1,0 +1,10 @@
+{% extends "basecrear.html" %}
+
+{% block content %}
+<from method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Guardar</button>
+    <a class="btn btn-default" href="{% url 'Empleados' %}">Cancelar</a>
+</from>
+{% endblock %}

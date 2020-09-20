@@ -1,0 +1,42 @@
+{% extends "basever.html" %}
+
+{% block title %} Comprobantes {% endblock %}
+
+{% block t %} Comprobantes {% endblock %}
+
+{% block content %}
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tipo</th>
+          <th>ID_Pedido</th>
+          <th>ID_Cliente</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if object_list %}
+        {% for com in object_list %}
+        <tr>
+          <td>{{com.id_comp}}</td>
+          <td>{{com.tipo}}</td>
+          <td>{{com.id_pedido.id_pedido}}</td>
+          <td>{{com.iden_cli.iden_cli}}</td>
+          <td>
+            <a class="btn btn-primary" href="{% url 'Comprobanteseditar' com.id %}">Editar</a>
+            <a class="btn btn-danger" href="{% url 'Comprobanteseliminar' com.id %}">Eliminar</a>
+          </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <h1>
+            No hay registros
+        </h1>
+        {% endif %}
+        <tr>
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

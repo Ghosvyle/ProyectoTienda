@@ -1,0 +1,44 @@
+{% extends "basever.html" %}
+
+{% block title %} Cliente {% endblock %}
+{% block t %} Clientes {% endblock %}
+{% block content %}
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>ID_Cliente</th>
+          <th>Nombre</th>
+          <th>Apellido Paterno</th>
+          <th>Apellido Materno</th>
+          <th>Celular</th>
+          <th>Tipo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if object_list %}
+        {% for c in object_list %}
+        <tr>
+          <td>{{c.iden_cli}}</td>
+          <td>{{c.nombre}}</td>
+          <td>{{c.apell_pat}}</td>
+          <td>{{c.apell_mat}}</td>
+          <td>{{c.celular}}</td>
+          <td>{{c.tipo}}</td>
+          <td>
+            <a class="btn btn-primary" href="{% url 'Clienteseditar' c.id %}">Editar</a>
+            <a class="btn btn-danger" href="{% url 'Clienteseliminar' c.id %}">Eliminar</a>
+          </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <h1>
+            No hay registros
+        </h1>
+        {% endif %}
+        <tr>
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

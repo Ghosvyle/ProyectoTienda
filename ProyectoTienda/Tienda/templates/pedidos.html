@@ -1,0 +1,47 @@
+{% extends "basever.html" %}
+
+{% block title %} Pedidos {% endblock %}
+{% block t %} Pedidos {% endblock %}
+
+{% block content %}
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Fecha</th>
+          <th>IGV</th>
+          <th>Monto</th>
+          <th>Cantidad</th>
+          <th>ID_EMP</th>
+          <th>ID_CLI</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if object_list %}
+        {% for ped in object_list %}
+        <tr>
+          <td>{{ped.id_pedido}}</td>
+          <td>{{ped.fecha}}</td>
+          <td>{{ped.igv}}</td>
+          <td>{{ped.monto}}</td>
+          <td>{{ped.cantidad}}</td>
+          <td>{{ped.id_emp.id_emp}}</td>
+          <td>{{ped.iden_cli.iden_cli}}</td>
+          <td>
+            <a class="btn btn-primary" href="{% url 'Pedidoseditar' ped.id %}">Editar</a>
+            <a class="btn btn-danger" href="{% url 'Pedidoseliminar' ped.id %}">Eliminar</a>
+          </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <h1>
+            No hay registros
+        </h1>
+        {% endif %}
+        <tr>
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
